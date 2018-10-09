@@ -12,7 +12,13 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
-    "vue": "^2.5.2"
+    "highlight.js": "^9.12.0",
+    "moment": "^2.22.2",
+    "simplemde": "^1.11.2",
+    "sweetalert2": "^7.15.1",
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

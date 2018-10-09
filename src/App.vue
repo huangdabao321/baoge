@@ -1,6 +1,9 @@
 <template>
 <div id="wrap">
   <TheHeader/>
+  <div id="main-container" class="container main-container">
+    <router-view/>
+  </div>
   <TheFooter/>
 </div>
 </template>
@@ -36,4 +39,5 @@ $fa-font-path: "~font-awesome/fonts/";
 @import "~font-awesome/scss/font-awesome";
 @import "./styles/main";
 @import "./styles/extra";
+@import 'simplemde/dist/simplemde.min.css';
 </style>
