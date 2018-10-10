@@ -7,6 +7,7 @@ export default [
     {
         path:'/',
         name:'Home',
+        alias:'/topics',
         component:()=>import('@/views/Home')
     },
     {
@@ -51,8 +52,47 @@ export default [
         meta:{auth:true}
     },
     {
-        path:'/articles/:articleId/content',
-        name:'Content',
-        component:()=>import('@/views/articles/Content')
+        path:'/articles/:articleId/eidt',
+        name:'Edit',
+        component:()=>import('@/views/articles/Create'),
+        meta:{auth:true}
+    },
+    {
+        path:'/:user',
+        component:()=>import('@/views/articles/Column'),
+        children:[
+            {
+                path:'',
+                name:'Column',
+                component:()=>import('@/views/articles/List')
+            },
+            {
+                path:'/articles/:articleId/content',
+                name:'Content',
+                component:()=>import('@/views/articles/Content')
+            },
+            // Search
+            {
+                path: '/search',
+                name: 'Search',
+                component: () => import('@/views/Search')
+            },
+            {
+                path: '/:user',
+                component: () => import('@/views/articles/Column'),
+                children: [
+                    {
+                        path: '',
+                        name: 'Column',
+                        component: () => import('@/views/articles/List.vue')
+                    },
+                    {
+                        path: '/articles/:articleId/content',
+                        component: () => import('@/views/articles/Content.vue')
+                    }
+                ]
+            },
+
+        ]
     }
 ]
